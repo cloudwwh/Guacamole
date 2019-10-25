@@ -999,7 +999,7 @@ s_echo "n" "${Reset}-Installing Nginx repo...    "; spinner
 # Install libjpeg-turbo Repo
 {
 	yum install -y wget
-	wget ${LIBJPEG_REPO} -P /etc/yum.repos.d/
+	wget --no-check-certificate ${LIBJPEG_REPO} -P /etc/yum.repos.d/
 
 	# Exclude beta releases
 	sed -i "s/exclude.*/${LIBJPEG_EXCLUDE}/g" /etc/yum.repos.d/libjpeg-turbo.repo
